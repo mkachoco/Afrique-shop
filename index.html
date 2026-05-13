@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Afrique Shop</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin:0;
+    font-family: 'Poppins', sans-serif;
+    background:#f5f7fa;
+}
+
+/* HEADER */
+header {
+    background:#0a1f44;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 20px;
+}
+
+header h1 {
+    margin:0;
+}
+
+nav a {
+    color:white;
+    margin-left:15px;
+    text-decoration:none;
+    font-weight:500;
+}
+
+/* HERO */
+.hero {
+    background:linear-gradient(120deg,#ff6a00,#ee0979);
+    color:white;
+    text-align:center;
+    padding:60px 20px;
+}
+
+.hero h2 {
+    font-size:32px;
+}
+
+.hero p {
+    font-size:18px;
+}
+
+.hero button {
+    margin-top:15px;
+    padding:12px 25px;
+    border:none;
+    background:white;
+    color:#ee0979;
+    font-weight:bold;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+/* PRODUITS */
+.products {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:20px;
+    padding:30px;
+}
+
+.card {
+    background:white;
+    border-radius:15px;
+    padding:15px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.card:hover {
+    transform:translateY(-5px);
+}
+
+.card img {
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+.price {
+    color:#00a859;
+    font-weight:bold;
+    font-size:18px;
+}
+
+/* BUTTONS */
+.btn {
+    display:block;
+    margin-top:10px;
+    padding:10px;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    color:white;
+    font-weight:bold;
+}
+
+.whatsapp { background:#25D366; }
+.orange { background:#ff8800; }
+
+/* FOOTER */
+footer {
+    background:#0a1f44;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+</style>
+
+<script>
+function payerOrange(nom, prix){
+    alert("Paiement Orange Money\n\nEnvoyez " + prix + " FCFA au numéro :\n+223 79599968\n\nPuis envoyez la preuve sur WhatsApp.");
+}
+</script>
+
+</head>
+
+<body>
+
+<header>
+<h1>Afrique Shop</h1>
+<nav>
+<a href="#">Accueil</a>
+<a href="#produits">Produits</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<section class="hero">
+<h2>🔥 Tout ce dont vous avez besoin au meilleur prix</h2>
+<p>Commandez maintenant et recevez rapidement au Mali 🇲🇱</p>
+<button onclick="document.getElementById('produits').scrollIntoView()">Voir les produits</button>
+</section>
+
+<section id="produits" class="products">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04">
+<h3>Mini imprimante Bluetooth</h3>
+<p class="price">10 000 FCFA</p>
+<button class="btn whatsapp" onclick="window.open('https://wa.me/22379599968?text=Bonjour je veux commander Mini imprimante')">Commander WhatsApp</button>
+<button class="btn orange" onclick="payerOrange('Imprimante','10000')">Payer Orange</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad">
+<h3>Écouteurs Bluetooth</h3>
+<p class="price">7 500 FCFA</p>
+<button class="btn whatsapp" onclick="window.open('https://wa.me/22379599968?text=Bonjour je veux commander écouteurs')">Commander WhatsApp</button>
+<button class="btn orange" onclick="payerOrange('Écouteurs','7500')">Payer Orange</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1518441902110-0d0c7c1a3c06">
+<h3>Montre connectée</h3>
+<p class="price">12 000 FCFA</p>
+<button class="btn whatsapp" onclick="window.open('https://wa.me/22379599968?text=Bonjour je veux commander montre')">Commander WhatsApp</button>
+<button class="btn orange" onclick="payerOrange('Montre','12000')">Payer Orange</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b">
+<h3>Lampe LED RGB</h3>
+<p class="price">6 000 FCFA</p>
+<button class="btn whatsapp" onclick="window.open('https://wa.me/22379599968?text=Bonjour je veux commander lampe')">Commander WhatsApp</button>
+<button class="btn orange" onclick="payerOrange('Lampe','6000')">Payer Orange</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1580910051074-3eb694886505">
+<h3>Power Bank</h3>
+<p class="price">8 000 FCFA</p>
+<button class="btn whatsapp" onclick="window.open('https://wa.me/22379599968?text=Bonjour je veux commander power bank')">Commander WhatsApp</button>
+<button class="btn orange" onclick="payerOrange('PowerBank','8000')">Payer Orange</button>
+</div>
+
+</section>
+
+<footer id="contact">
+<p>📧 Contact : mkatech68@gmail.com</p>
+<p>📱 WhatsApp : +223 79599968</p>
+<p>🚚 Livraison partout au Mali</p>
+<p>💳 Paiement : Orange Money disponible</p>
+</footer>
+
+</body>
+</html>
