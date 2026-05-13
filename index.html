@@ -5,161 +5,603 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Afrique Shop</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
 <style>
-body { margin:0; font-family:'Poppins'; background:#f4f6f9; }
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f5f5f5;
+}
 
 /* HEADER */
-header {
- display:flex; justify-content:space-between; align-items:center;
- background:#0a1f44; color:white; padding:15px;
+
+header{
+    background:white;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    position:sticky;
+    top:0;
+    z-index:1000;
 }
-.logo { font-size:22px; color:#ff8800; font-weight:bold; }
+
+.top-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 5%;
+    gap:20px;
+}
+
+.logo{
+    font-size:38px;
+    font-weight:bold;
+    color:#ff6600;
+}
+
+.search-box{
+    flex:1;
+    position:relative;
+}
+
+.search-box input{
+    width:100%;
+    padding:15px 55px 15px 20px;
+    border-radius:40px;
+    border:2px solid #ddd;
+    outline:none;
+    font-size:16px;
+}
+
+.search-box i{
+    position:absolute;
+    right:20px;
+    top:15px;
+    color:#555;
+    font-size:20px;
+}
+
+.icons{
+    display:flex;
+    gap:30px;
+}
+
+.icons div{
+    text-align:center;
+    font-size:14px;
+    cursor:pointer;
+}
+
+.icons i{
+    font-size:22px;
+    margin-bottom:5px;
+}
+
+/* NAVIGATION */
+
+nav{
+    background:#fff;
+    border-top:1px solid #eee;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    padding:15px 5%;
+    gap:40px;
+    align-items:center;
+}
+
+nav ul li{
+    position:relative;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:#222;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:#ff6600;
+}
+
+/* MENU DEROULANT */
+
+.dropdown{
+    display:none;
+    position:absolute;
+    top:35px;
+    left:0;
+    width:220px;
+    background:white;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.15);
+    overflow:hidden;
+}
+
+.dropdown a{
+    display:block;
+    padding:15px;
+    border-bottom:1px solid #eee;
+}
+
+nav ul li:hover .dropdown{
+    display:block;
+}
 
 /* HERO */
-.hero {
- background:linear-gradient(120deg,#ff6a00,#ee0979);
- color:white; text-align:center; padding:50px;
+
+.hero{
+    margin:30px 5%;
+    background:linear-gradient(to right,#008cff,#00c6ff);
+    border-radius:30px;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:50px;
+    color:white;
+    flex-wrap:wrap;
 }
 
-/* PRODUCTS */
-.products {
- display:grid;
- grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
- gap:20px; padding:20px;
+.hero-text h1{
+    font-size:60px;
+    line-height:1.1;
+    margin-bottom:20px;
 }
 
-.card {
- background:white; padding:15px; border-radius:15px;
- text-align:center; box-shadow:0 5px 15px rgba(0,0,0,0.1);
+.hero-text p{
+    font-size:20px;
+    margin-bottom:25px;
 }
 
-.card img {
- width:100%; height:180px; object-fit:cover;
- border-radius:10px;
+.hero-text a{
+    text-decoration:none;
+    background:white;
+    color:#008cff;
+    padding:15px 35px;
+    border-radius:40px;
+    font-weight:bold;
 }
 
-.price { color:green; font-weight:bold; }
-
-/* BUTTON */
-.btn {
- display:block; margin-top:10px;
- padding:10px; border:none; border-radius:5px;
- color:white; cursor:pointer;
-}
-.add { background:#0a1f44; }
-.whatsapp { background:#25D366; }
-.orange { background:#ff8800; }
-
-/* CART */
-.cart {
- position:fixed; top:0; right:-100%;
- width:300px; height:100%;
- background:white; box-shadow:-5px 0 10px rgba(0,0,0,0.2);
- padding:20px; transition:0.3s;
+.hero img{
+    width:450px;
+    max-width:100%;
 }
 
-.cart.active { right:0; }
+/* SECTION */
 
-footer {
- background:#0a1f44; color:white;
- text-align:center; padding:20px;
+.section-title{
+    margin:40px 5% 20px;
+    font-size:32px;
+    color:#222;
 }
+
+/* PRODUITS */
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:25px;
+    padding:0 5%;
+}
+
+.product{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    transition:0.3s;
+    position:relative;
+}
+
+.product:hover{
+    transform:translateY(-8px);
+}
+
+.product img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+}
+
+.product-content{
+    padding:20px;
+}
+
+.product h3{
+    font-size:18px;
+    margin-bottom:10px;
+}
+
+.price{
+    color:#ff6600;
+    font-size:28px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.old-price{
+    text-decoration:line-through;
+    color:gray;
+    font-size:14px;
+}
+
+.buy-btn{
+    display:inline-block;
+    text-decoration:none;
+    background:#ff6600;
+    color:white;
+    padding:12px 25px;
+    border-radius:30px;
+    margin-top:10px;
+    font-weight:bold;
+}
+
+/* BADGE */
+
+.badge{
+    position:absolute;
+    top:15px;
+    left:15px;
+    background:red;
+    color:white;
+    padding:8px 15px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:bold;
+}
+
+/* PAIEMENTS */
+
+.payments{
+    margin:70px 5%;
+    background:white;
+    padding:40px;
+    border-radius:25px;
+    text-align:center;
+}
+
+.payments h2{
+    margin-bottom:30px;
+}
+
+.payment-methods{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.payment{
+    background:#f5f5f5;
+    padding:20px 35px;
+    border-radius:15px;
+    font-size:20px;
+    font-weight:bold;
+    box-shadow:0 3px 10px rgba(0,0,0,0.1);
+}
+
+/* FOOTER */
+
+footer{
+    background:#111;
+    color:white;
+    padding:50px 5%;
+    margin-top:60px;
+}
+
+.footer-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+footer h3{
+    margin-bottom:20px;
+    color:#ff6600;
+}
+
+footer p{
+    line-height:1.8;
+}
+
+.socials i{
+    font-size:25px;
+    margin-right:15px;
+    margin-top:15px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+    .top-header{
+        flex-direction:column;
+    }
+
+    nav ul{
+        flex-wrap:wrap;
+        gap:20px;
+    }
+
+    .hero{
+        text-align:center;
+        justify-content:center;
+    }
+
+    .hero-text h1{
+        font-size:40px;
+    }
+
+}
+
 </style>
-
-<script>
-let panier = [];
-
-function ajouter(nom, prix){
- panier.push({nom, prix});
- alert(nom + " ajouté au panier");
- afficherPanier();
-}
-
-function afficherPanier(){
- let cart = document.getElementById("cart-items");
- cart.innerHTML="";
- let total=0;
-
- panier.forEach(p=>{
-  cart.innerHTML += `<p>${p.nom} - ${p.prix} FCFA</p>`;
-  total += p.prix;
- });
-
- document.getElementById("total").innerText = total + " FCFA";
-}
-
-function ouvrirPanier(){
- document.getElementById("cart").classList.add("active");
-}
-
-function fermerPanier(){
- document.getElementById("cart").classList.remove("active");
-}
-
-function payer(){
- alert("Paiement réel à connecter avec PayDunya ou Stripe");
-}
-</script>
-
 </head>
 
 <body>
 
+<!-- HEADER -->
+
 <header>
-<div class="logo">Afrique Shop</div>
-<button onclick="ouvrirPanier()">🛒</button>
+
+<div class="top-header">
+
+<div class="logo">
+<i class="fa-solid fa-cart-shopping"></i>
+Afrique Shop
+</div>
+
+<div class="search-box">
+<input type="text" placeholder="Rechercher un produit...">
+<i class="fa fa-search"></i>
+</div>
+
+<div class="icons">
+
+<div>
+<i class="fa-solid fa-location-dot"></i>
+<p>Magasin</p>
+</div>
+
+<div>
+<i class="fa-solid fa-user"></i>
+<p>Connexion</p>
+</div>
+
+<div>
+<i class="fa-solid fa-cart-shopping"></i>
+<p>Panier</p>
+</div>
+
+</div>
+
+</div>
+
+<!-- MENU -->
+
+<nav>
+
+<ul>
+
+<li>
+<a href="#"><i class="fa fa-bars"></i> Produits</a>
+
+<div class="dropdown">
+<a href="#">Téléphones</a>
+<a href="#">Ordinateurs</a>
+<a href="#">Mode & Sneakers</a>
+<a href="#">Gaming</a>
+<a href="#">Accessoires</a>
+<a href="#">Beauté</a>
+</div>
+
+</li>
+
+<li><a href="#">Livraison rapide</a></li>
+<li><a href="#">Promotions</a></li>
+<li><a href="#">Top tendances</a></li>
+<li><a href="#">Revendre vos produits</a></li>
+
+</ul>
+
+</nav>
+
 </header>
 
+<!-- HERO -->
+
 <section class="hero">
-<h1>🔥 Boutique tendance au Mali</h1>
-<p>Livraison rapide + paiement Mobile Money</p>
+
+<div class="hero-text">
+
+<h1>Place au Shopping<br>Africain</h1>
+
+<p>Les produits tendance TikTok, Facebook et Instagram au meilleur prix.</p>
+
+<a href="#">Voir nos offres</a>
+
+</div>
+
+<img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?q=80&w=1200">
+
 </section>
+
+<!-- PRODUITS -->
+
+<h2 class="section-title">Produits tendances</h2>
 
 <section class="products">
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad">
-<h3>Écouteurs Bluetooth</h3>
-<p class="price">7500 FCFA</p>
-<button class="btn add" onclick="ajouter('Écouteurs',7500)">Ajouter</button>
-<button class="btn whatsapp" onclick="window.open('https://wa.me/22379599968')">WhatsApp</button>
-<button class="btn orange">Orange</button>
+<!-- PRODUIT 1 -->
+
+<div class="product">
+
+<div class="badge">-25%</div>
+
+<img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=1200">
+
+<div class="product-content">
+
+<h3>iPhone 15 Pro Max</h3>
+
+<p>Le smartphone le plus viral du moment.</p>
+
+<div class="old-price">1 250 000 FCFA</div>
+
+<div class="price">950 000 FCFA</div>
+
+<a href="#" class="buy-btn">Acheter</a>
+
 </div>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1580910051074-3eb694886505">
-<h3>Power Bank</h3>
-<p class="price">8000 FCFA</p>
-<button class="btn add" onclick="ajouter('Power Bank',8000)">Ajouter</button>
-<button class="btn whatsapp" onclick="window.open('https://wa.me/22379599968')">WhatsApp</button>
-<button class="btn orange">Orange</button>
 </div>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1518441902110-0d0c7c1a3c06">
-<h3>Montre connectée</h3>
-<p class="price">12000 FCFA</p>
-<button class="btn add" onclick="ajouter('Montre',12000)">Ajouter</button>
-<button class="btn whatsapp" onclick="window.open('https://wa.me/22379599968')">WhatsApp</button>
-<button class="btn orange">Orange</button>
+<!-- PRODUIT 2 -->
+
+<div class="product">
+
+<div class="badge">Buzz</div>
+
+<img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200">
+
+<div class="product-content">
+
+<h3>Nike Air Jordan</h3>
+
+<p>Chaussure tendance TikTok.</p>
+
+<div class="old-price">120 000 FCFA</div>
+
+<div class="price">89 000 FCFA</div>
+
+<a href="#" class="buy-btn">Acheter</a>
+
+</div>
+
+</div>
+
+<!-- PRODUIT 3 -->
+
+<div class="product">
+
+<div class="badge">Hot</div>
+
+<img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?q=80&w=1200">
+
+<div class="product-content">
+
+<h3>Casque Gaming RGB</h3>
+
+<p>Parfait pour gamers et streamers.</p>
+
+<div class="old-price">45 000 FCFA</div>
+
+<div class="price">29 000 FCFA</div>
+
+<a href="#" class="buy-btn">Acheter</a>
+
+</div>
+
+</div>
+
+<!-- PRODUIT 4 -->
+
+<div class="product">
+
+<div class="badge">New</div>
+
+<img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1200">
+
+<div class="product-content">
+
+<h3>Apple Watch Ultra</h3>
+
+<p>Montre connectée premium.</p>
+
+<div class="old-price">400 000 FCFA</div>
+
+<div class="price">320 000 FCFA</div>
+
+<a href="#" class="buy-btn">Acheter</a>
+
+</div>
+
 </div>
 
 </section>
 
-<!-- PANIER -->
-<div id="cart" class="cart">
-<h2>Panier</h2>
-<div id="cart-items"></div>
-<p>Total : <span id="total">0 FCFA</span></p>
-<button onclick="payer()" class="btn add">Payer</button>
-<button onclick="fermerPanier()" class="btn orange">Fermer</button>
+<!-- PAIEMENTS -->
+
+<section class="payments">
+
+<h2>Méthodes de paiement</h2>
+
+<div class="payment-methods">
+
+<div class="payment">Wave</div>
+
+<div class="payment">Orange Money</div>
+
+<div class="payment">Moov Money</div>
+
+<div class="payment">Carte Bancaire</div>
+
 </div>
 
+</section>
+
+<!-- FOOTER -->
+
 <footer>
-<p>📧 mkatech68@gmail.com</p>
-<p>📱 +223 79599968</p>
+
+<div class="footer-container">
+
+<div>
+
+<h3>Afrique Shop</h3>
+
+<p>
+Votre boutique e-commerce africaine moderne.
+Achetez facilement vos produits tendance.
+</p>
+
+</div>
+
+<div>
+
+<h3>Catégories</h3>
+
+<p>Téléphones</p>
+<p>Gaming</p>
+<p>Mode</p>
+<p>Beauté</p>
+
+</div>
+
+<div>
+
+<h3>Suivez-nous</h3>
+
+<div class="socials">
+<i class="fab fa-facebook"></i>
+<i class="fab fa-tiktok"></i>
+<i class="fab fa-instagram"></i>
+<i class="fab fa-youtube"></i>
+</div>
+
+</div>
+
+</div>
+
 </footer>
 
 </body>
